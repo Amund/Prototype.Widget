@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Prototype.Widget</title>
+<style type="text/css">
+.demo { margin:50px; padding:10px; background:#eee; border:1px solid #ddd; }
+.demo div { display:inline-block; background:#ddd; border:1px solid #aaa; margin:20px; overflow:auto; }
+.demo div div { width:50px; height:50px; }
+.demo div.over { background-color:#CFC; }
+.demo div.focus { background-color:#6F0; }
+</style>
+<script type="text/javascript" src="js/prototype.js"></script>
+<script type="text/javascript" src="js/widget.js"></script>
+<script type="text/javascript">
+
+var widget1, widget2, widget3, widget4;
+
+
+document.observe('dom:loaded', function() {
+	
+	
+	widget1 = new Prototype.Widget('widget1', 'widget1');
+	widget2 = new Prototype.Widget('widget2', 'widget2');
+	widget3 = new Prototype.Widget('widget3', 'widget3');
+	widget4 = $('widget4');
+	
+	[widget1, widget2, widget3].invoke('bindFocusables');
+	//$('b1').observe('focus', function() {alert('focus');});
+	
+});
+
+</script>
+</head>
+
+<body>
+
+<h2>Prototype.Widget</h2>
+
+<div id="demo1" class="demo">
+	<div id="widget1">
+        <button id="b1" tabindex="0">Fake</button>
+    	<div id="widget2">
+        <input type="button" id="b2" value="Fake" />
+        </div>
+        <div id="widget3"></div>
+        <div id="widget4"></div>
+    </div>
+    <input type="text" value="Fake" />
+</div>
+
+
+
+</body>
+</html>
