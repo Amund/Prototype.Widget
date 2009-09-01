@@ -13,29 +13,6 @@ TODO Widgets a faire : button, select, table, checklist, calendar, slider
 
 Prototype.Widgets = {}; // Widgets collection
 
-// focus/blur bubbling
-/*(function() {
-	function focusInHandler(e) {
-		Event.element(e).fire("focus:in");
-	}
-	function focusOutHandler(e) {
-		Event.element(e).fire("focus:out");
-	}
-
-	if(document.addEventListener) {
-		document.addEventListener("focus", focusInHandler, true);
-		document.addEventListener("blur", focusOutHandler, true);
-	} else {
-		document.observe("focusin", focusInHandler);
-		document.observe("focusout", focusOutHandler);
-	}
-})();*/
-/*document.delegate(selector, 'focus:in', function(){
-	// on focus 
-});
-document.delegate(selector, 'focus:out', function(){
-	// on blur
-});*/
 (function() {
 	// Global observer : Capture event from one widget, and propagate it to all Widget instances
 	var overHandler  = function(e) {
